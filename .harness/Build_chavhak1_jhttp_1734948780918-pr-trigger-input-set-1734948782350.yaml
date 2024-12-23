@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_chavhak1_jhttp_1734948780918-pr-trigger-input-set
+  identifier: Build_chavhak1_jhttp_1734948780918prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_chavhak1_jhttp_1734948780918
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
