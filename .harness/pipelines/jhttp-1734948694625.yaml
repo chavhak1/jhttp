@@ -34,7 +34,7 @@ pipeline:
                   identifier: ArtifactoryUpload_1
                   spec:
                     connectorRef: Jfrog2
-                    target: jhttp-app-libs-release
+                    target: mvn-local
                     sourcePath: /harness/target/jhttp-1.0-SNAPSHOT.jar
           platform:
             os: Linux
