@@ -36,31 +36,4 @@ pipeline:
             spec: {}
         type: CI
         description: ""
-    - stage:
-        name: push-artifact
-        identifier: pushartifact
-        description: ""
-        type: CI
-        spec:
-          cloneCodebase: true
-          caching:
-            enabled: true
-          buildIntelligence:
-            enabled: true
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
-          execution:
-            steps:
-              - step:
-                  type: ArtifactoryUpload
-                  name: ArtifactoryUpload_1
-                  identifier: ArtifactoryUpload_1
-                  spec:
-                    connectorRef: Jfrog
-                    target: java-app-libs-release-local
-                    sourcePath: target/app.jar
   tags: {}
