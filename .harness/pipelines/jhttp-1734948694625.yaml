@@ -28,6 +28,14 @@ pipeline:
                     command: |-
                       echo "Welcome to Harness CI"
                       mvn -B package --file pom.xml
+              - step:
+                  type: ArtifactoryUpload
+                  name: ArtifactoryUpload_1
+                  identifier: ArtifactoryUpload_1
+                  spec:
+                    connectorRef: Jfrog
+                    target: java-app-libs-release-local/
+                    sourcePath: /harness/target/jhttp-1.0-SNAPSHOT.jar
           platform:
             os: Linux
             arch: Amd64
