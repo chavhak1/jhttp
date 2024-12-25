@@ -33,8 +33,8 @@ pipeline:
                   name: ArtifactoryUpload_1
                   identifier: ArtifactoryUpload_1
                   spec:
-                    connectorRef: Jfrog
-                    target: https://trialr9y285.jfrog.io/artifactory/jhttp-app-libs-release
+                    connectorRef: Jfrog2
+                    target: jhttp-app-libs-release
                     sourcePath: /harness/target/jhttp-1.0-SNAPSHOT.jar
           platform:
             os: Linux
