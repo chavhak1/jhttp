@@ -44,4 +44,31 @@ pipeline:
             spec: {}
         type: CI
         description: ""
+    - stage:
+        name: Deploy
+        identifier: Deploy
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: MyappCD
+          project: default_project
+          inputs:
+            identifier: MyappCD
+            stages:
+              - stage:
+                  identifier: Deployservice
+                  type: Deployment
+                  spec:
+                    service:
+                      serviceInputs:
+                        serviceDefinition:
+                          type: Ssh
+                          spec:
+                            artifacts:
+                              primary:
+                                primaryArtifactRef: <+input>
+                                sources: <+input>
+        when:
+          pipelineStatus: Failure
   tags: {}
